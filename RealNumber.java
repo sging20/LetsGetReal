@@ -43,8 +43,8 @@ public class RealNumber{
 
   public boolean equals(RealNumber other){
     if(getValue() == 0 || (getValue() == 0)){
-          return (getValue() == other.getValue())
-        };
+          return (getValue() == other.getValue());
+        }
     if(Math.abs(getValue() - other.getValue()) <= 0.0001) return true;
     return false;
 }

@@ -16,7 +16,7 @@ public class RealNumber{
   *Return the product of this and the other
   */
   public RealNumber multiply(RealNumber other){
-      return null;
+      return new RealNumber( getValue() * other.getValue());
     }
 
   /*

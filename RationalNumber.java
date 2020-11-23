@@ -36,7 +36,7 @@ public class RationalNumber extends RealNumber {
   *and denominator as this RationalNumber but reversed.
   */
   public RationalNumber reciprocal(){
-    return null;
+    return getDenominator() + "/" + getNumerator(); 
   }
   /**
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.

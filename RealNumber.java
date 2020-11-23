@@ -29,7 +29,7 @@ public class RealNumber{
   /*  *Return the this minus the other
   */
   public RealNumber subtract(RealNumber other){
-      return null;
+      return new RealNumber( getValue() - other.getValue());
     }
 
 

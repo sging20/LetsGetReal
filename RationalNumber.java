@@ -1,11 +1,6 @@
 public class RationalNumber extends RealNumber {
   private int numerator, denominator;
 
-  /**Initialize the RationalNumber with the provided values
-  *  if the denominator is 0, make the fraction 0/1 instead
-  *@param nume the numerator
-  *@param deno the denominator
-  */
   public RationalNumber(int nume, int deno){
     super(0.0);//this value is ignored!
     numerator= nume;
@@ -14,8 +9,12 @@ public class RationalNumber extends RealNumber {
       numerator = 0;
       denominator = 1;
     }
+    reduce();
+    if (denominator < 0){
+      numerator *= -1;
+      denominator *= -1;
+    }
   }
-
   public double getValue(){
     return 0.0;
   }
@@ -59,9 +58,21 @@ public class RationalNumber extends RealNumber {
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+    if(a < b){
+      int c= b;
+      b= a;
+      a=c;
+    }
+    if(b== 0) return a;
+    if(a % b == 0) return b;
+
+    int remainder = a % b;
+    while(remainder != 0) {
+      remainder = a%b;
+      a = b;
+      b= remainder;
+    }
+    return a;
   }
 
   /**
@@ -70,7 +81,6 @@ public class RationalNumber extends RealNumber {
   *reduced after construction.
   */
   private void reduce(){
-
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**

@@ -6,7 +6,6 @@ public abstract class Number{
   */
   public int compareTo(Number other){
     return (int) Math.round(getValue() - other.getValue());
-    //TO BE IMPLEMENTED
   }
 
   /*
@@ -15,5 +14,9 @@ public abstract class Number{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(Number other){
-    //TO BE IMPLEMENTED  }
+    if(getValue() == 0 || other.getValue()== 0){
+      return getValue() == other.getValue();
+    }
+    return Math.abs((other.getValue() - getValue()) / getValue()) < 0.0001;
+}
 }

@@ -25,7 +25,7 @@ public class RealNumber extends Number {
     }
   public String toString(){
       return ""+value;
-
+    }
   public boolean equals(RealNumber other){
     if(getValue() == 0 || (getValue() == 0)){
           return (getValue() == other.getValue());
